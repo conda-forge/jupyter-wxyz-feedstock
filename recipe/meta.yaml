@@ -1,4 +1,4 @@
-{% set version = "0.4.1" %}
+{% set version = "0.4.2" %}
 {% set min_peer = "0.4" %}
 {% set max_peer = "0.5" %}
 {% set build_number = "0" %}
@@ -10,37 +10,37 @@ package:
 source:
   - folder: wxyz_core
     url: https://pypi.io/packages/source/w/wxyz_core/wxyz_core-{{ version }}.tar.gz
-    sha256: ad091a5e53cd17e93c82ac805d2114608f1071bb039cc8c56c44bc6004ff7eaa
+    sha256: 40ea9334147f042739542159250619c03b42ccc594db7d76de2fb115e846ed6c
   - folder: wxyz_datagrid
     url: https://pypi.io/packages/source/w/wxyz_datagrid/wxyz_datagrid-{{ version }}.tar.gz
-    sha256: 4f8addeb05e1fc719f69d51fc4c71df3fbf5a0df351a352c9b3a3198df80306a
+    sha256: 6396cbca5d41ba76e6b4ead0a312682900e52c32ab8697ed3fe27e07ff843a67
   - folder: wxyz_dvcs
     url: https://pypi.io/packages/source/w/wxyz_dvcs/wxyz_dvcs-{{ version }}.tar.gz
-    sha256: a9f5982b6d274803ec13e2044278c8fe7236f68360bcb38c83fa578c3458a424
+    sha256: bd659effd3c1d49a695ae2342f5a08464335f94dc3bed07df2c56dcced33fd10
   - folder: wxyz_html
     url: https://pypi.io/packages/source/w/wxyz_html/wxyz_html-{{ version }}.tar.gz
-    sha256: 3362c634279fc41d2e94c69bc79db5faa1db5425fa0c1edf6b949703469c2bec
+    sha256: 14550aceeeece784cdafab837a671874d97d64f497df078a3983384bc47a6282
   - folder: wxyz_json_e
     url: https://pypi.io/packages/source/w/wxyz_json_e/wxyz_json_e-{{ version }}.tar.gz
-    sha256: bccfc0de7cc412efd8a91d3c087725d1a8ef4b64fe84be1ec6958b6b5d413612
+    sha256: 1f294a91f7d74e81da81ccb92cded375bc54e52818757a94055f6cb05bcd422b
   - folder: wxyz_json_schema_form
     url: https://pypi.io/packages/source/w/wxyz_json_schema_form/wxyz_json_schema_form-{{ version }}.tar.gz
-    sha256: fe0589b69e7d445ec10b60a2be23315d17a6acc02b6afa6873967ba478f3fe4b
+    sha256: 851e13c37b8f8dd10078aa4197dee45a781e6b044fa4798b25f19b7a3e1f34cf
   - folder: wxyz_jsonld
     url: https://pypi.io/packages/source/w/wxyz_jsonld/wxyz_jsonld-{{ version }}.tar.gz
-    sha256: cceab32476371bd462690ffd9c341acf0968e554118fc7c06430a0188c337d64
+    sha256: 3f06d116904714e332d2a6fe1e63e6c41f3e55e02b08e65afb74b0f416b75243
   - folder: wxyz_lab
     url: https://pypi.io/packages/source/w/wxyz_lab/wxyz_lab-{{ version }}.tar.gz
-    sha256: 3893572c3cc41fec8d6be022ea39e8fa68e74d42216b3f1dce733b9f340d39bd
+    sha256: a268dd845ef1d41b1d26ae29050373a0b3cb1a49ffcb68d070417b5a634cc3a1
   - folder: wxyz_svg
     url: https://pypi.io/packages/source/w/wxyz_svg/wxyz_svg-{{ version }}.tar.gz
-    sha256: 80fef008b497c50e6ce1666e8cb30a02f9a98305f4b65700b85a74cea720b0a9
+    sha256: 08f8be3e43acc0ee08cbdbbedc6e547959faee00d3fbd659c92d852d8c9aee70
   - folder: wxyz_tpl_jinja
     url: https://pypi.io/packages/source/w/wxyz_tpl_jinja/wxyz_tpl_jinja-{{ version }}.tar.gz
-    sha256: 61ff63848d53d2729a4ad3b1398ef4f888928977bea3e1ebc5a580de21c57cb6
+    sha256: 691cc6c3df050487b23aec7abcaf1ed5efb80da7e0eeada1e21c135b12221d6d
   - folder: wxyz_yaml
     url: https://pypi.io/packages/source/w/wxyz_yaml/wxyz_yaml-{{ version }}.tar.gz
-    sha256: 68caa57d39007be2015369266db1a35355a32279c9664f8adaa40410d68fa62d
+    sha256: 0203400749a3b7675cfbac7b9404a0399749374bf938dac886d88c6a38a27d63
 
 build:
   number: {{ build_number }}
@@ -82,7 +82,7 @@ outputs:
       home: https://deathbeds.github.io/wxyz
       summary: experimental Jupyter widgets for JSON and evented transformations
       license: BSD-3-Clause
-      license_file: wxyz_core/LICENSE.txt
+      license_file: wxyz_core/src/wxyz/core/js/LICENSE.txt
       dev_url: https://github.com/deathbeds/wxyz
       doc_url: https://deathbeds.github.io/wxyz
       doc_source_url: https://github.com/deathbeds/wxyz/tree/v{{ version }}/docs
@@ -113,7 +113,7 @@ outputs:
       home: https://deathbeds.github.io/wxyz
       summary: experimental Jupyter widgets for the Lumino DataGrid
       license: BSD-3-Clause
-      license_file: wxyz_datagrid/LICENSE.txt
+      license_file: wxyz_datagrid/src/wxyz/datagrid/js/LICENSE.txt
       dev_url: https://github.com/deathbeds/wxyz
       doc_url: https://deathbeds.github.io/wxyz
       doc_source_url: https://github.com/deathbeds/wxyz/tree/v{{ version }}/docs
@@ -144,7 +144,7 @@ outputs:
       home: https://deathbeds.github.io/wxyz
       summary: experimental Jupyter widgets for working with data in revision control
       license: BSD-3-Clause
-      license_file: wxyz_dvcs/LICENSE.txt
+      license_file: wxyz_dvcs/src/wxyz/dvcs/js/LICENSE.txt
       dev_url: https://github.com/deathbeds/wxyz
       doc_url: https://deathbeds.github.io/wxyz
       doc_source_url: https://github.com/deathbeds/wxyz/tree/v{{ version }}/docs
@@ -172,7 +172,7 @@ outputs:
       home: https://deathbeds.github.io/wxyz
       summary: experimental Jupyter widgets for HTML5
       license: BSD-3-Clause
-      license_file: wxyz_html/LICENSE.txt
+      license_file: wxyz_html/src/wxyz/html/js/LICENSE.txt
       dev_url: https://github.com/deathbeds/wxyz
       doc_url: https://deathbeds.github.io/wxyz
       doc_source_url: https://github.com/deathbeds/wxyz/tree/v{{ version }}/docs
@@ -201,7 +201,7 @@ outputs:
       home: https://deathbeds.github.io/wxyz
       summary: experimental Jupyter widgets for JSON-E
       license: BSD-3-Clause
-      license_file: wxyz_json_e/LICENSE.txt
+      license_file: wxyz_json_e/src/wxyz/json_e/js/LICENSE.txt
       dev_url: https://github.com/deathbeds/wxyz
       doc_url: https://deathbeds.github.io/wxyz
       doc_source_url: https://github.com/deathbeds/wxyz/tree/v{{ version }}/docs
@@ -229,7 +229,7 @@ outputs:
       home: https://deathbeds.github.io/wxyz
       summary: experimental Jupyter widgets for JSON Schema Form
       license: BSD-3-Clause
-      license_file: wxyz_json_schema_form/LICENSE.txt
+      license_file: wxyz_json_schema_form/src/wxyz/json_schema_form/js/LICENSE.txt
       dev_url: https://github.com/deathbeds/wxyz
       doc_url: https://deathbeds.github.io/wxyz
       doc_source_url: https://github.com/deathbeds/wxyz/tree/v{{ version }}/docs
@@ -258,7 +258,7 @@ outputs:
       home: https://deathbeds.github.io/wxyz
       summary: experimental Jupyter widgets for JSON-LD
       license: BSD-3-Clause
-      license_file: wxyz_jsonld/LICENSE.txt
+      license_file: wxyz_jsonld/src/wxyz/jsonld/js/LICENSE.txt
       dev_url: https://github.com/deathbeds/wxyz
       doc_url: https://deathbeds.github.io/wxyz
       doc_source_url: https://github.com/deathbeds/wxyz/tree/v{{ version }}/docs
@@ -286,7 +286,7 @@ outputs:
       home: https://deathbeds.github.io/wxyz
       summary: experimental Jupyter widgets for JupyterLab
       license: BSD-3-Clause
-      license_file: wxyz_lab/LICENSE.txt
+      license_file: wxyz_lab/src/wxyz/lab/js/LICENSE.txt
       dev_url: https://github.com/deathbeds/wxyz
       doc_url: https://deathbeds.github.io/wxyz
       doc_source_url: https://github.com/deathbeds/wxyz/tree/v{{ version }}/docs
@@ -314,7 +314,7 @@ outputs:
       home: https://deathbeds.github.io/wxyz
       summary: experimental Jupyter widgets for SVG
       license: BSD-3-Clause
-      license_file: wxyz_svg/LICENSE.txt
+      license_file: wxyz_svg/src/wxyz/svg/js/LICENSE.txt
       dev_url: https://github.com/deathbeds/wxyz
       doc_url: https://deathbeds.github.io/wxyz
       doc_source_url: https://github.com/deathbeds/wxyz/tree/v{{ version }}/docs
@@ -343,7 +343,7 @@ outputs:
       home: https://deathbeds.github.io/wxyz
       summary: experimental Jupyter widgets for Jinja2 templates
       license: BSD-3-Clause
-      license_file: wxyz_tpl_jinja/LICENSE.txt
+      license_file: wxyz_tpl_jinja/src/wxyz/tpl_jinja/js/LICENSE.txt
       dev_url: https://github.com/deathbeds/wxyz
       doc_url: https://deathbeds.github.io/wxyz
       doc_source_url: https://github.com/deathbeds/wxyz/tree/v{{ version }}/docs
@@ -372,7 +372,7 @@ outputs:
       home: https://deathbeds.github.io/wxyz
       summary: experimental Jupyter widgets for YAML
       license: BSD-3-Clause
-      license_file: wxyz_yaml/LICENSE.txt
+      license_file: wxyz_yaml/src/wxyz/yaml/js/LICENSE.txt
       dev_url: https://github.com/deathbeds/wxyz
       doc_url: https://deathbeds.github.io/wxyz
       doc_source_url: https://github.com/deathbeds/wxyz/tree/v{{ version }}/docs
