@@ -1,6 +1,6 @@
-{% set version = "0.4.2" %}
-{% set min_peer = "0.4" %}
-{% set max_peer = "0.5" %}
+{% set version = "0.5.0" %}
+{% set min_peer = "0.5" %}
+{% set max_peer = "0.6" %}
 {% set build_number = "0" %}
 
 package:
@@ -10,37 +10,37 @@ package:
 source:
   - folder: wxyz_core
     url: https://pypi.io/packages/source/w/wxyz_core/wxyz_core-{{ version }}.tar.gz
-    sha256: 40ea9334147f042739542159250619c03b42ccc594db7d76de2fb115e846ed6c
+    sha256: 739e0d8cfb123ebbd917fd26f688a9844df979bda3756cdd38242c03d7963130
   - folder: wxyz_datagrid
     url: https://pypi.io/packages/source/w/wxyz_datagrid/wxyz_datagrid-{{ version }}.tar.gz
-    sha256: 6396cbca5d41ba76e6b4ead0a312682900e52c32ab8697ed3fe27e07ff843a67
+    sha256: d26108a3e966e5edcaabeda9fc96e9695549f945686b2cf17330fe34277150fc
   - folder: wxyz_dvcs
     url: https://pypi.io/packages/source/w/wxyz_dvcs/wxyz_dvcs-{{ version }}.tar.gz
-    sha256: bd659effd3c1d49a695ae2342f5a08464335f94dc3bed07df2c56dcced33fd10
+    sha256: ac0937694363a1cbbb264aadfdc0d05ea424c367d87dbd0dc1086de087b96920
   - folder: wxyz_html
     url: https://pypi.io/packages/source/w/wxyz_html/wxyz_html-{{ version }}.tar.gz
-    sha256: 14550aceeeece784cdafab837a671874d97d64f497df078a3983384bc47a6282
+    sha256: bd75e05f456fc29811cf05e51eb2d8a01e0ff4cf3a0ed6500b020a5c4735a0c2
   - folder: wxyz_json_e
     url: https://pypi.io/packages/source/w/wxyz_json_e/wxyz_json_e-{{ version }}.tar.gz
-    sha256: 1f294a91f7d74e81da81ccb92cded375bc54e52818757a94055f6cb05bcd422b
+    sha256: a866160a9a9986c35e999e5a40fa63692e6ec0bb2763b1cdcee2a9769816897d
   - folder: wxyz_json_schema_form
     url: https://pypi.io/packages/source/w/wxyz_json_schema_form/wxyz_json_schema_form-{{ version }}.tar.gz
-    sha256: 851e13c37b8f8dd10078aa4197dee45a781e6b044fa4798b25f19b7a3e1f34cf
+    sha256: 5c29bc87d2cbcdf0eab841c7de002341355e5cce7c23c121caa5b97394e6a5fe
   - folder: wxyz_jsonld
     url: https://pypi.io/packages/source/w/wxyz_jsonld/wxyz_jsonld-{{ version }}.tar.gz
-    sha256: 3f06d116904714e332d2a6fe1e63e6c41f3e55e02b08e65afb74b0f416b75243
+    sha256: 06d3f7fdc8965dd87192a54d1066053866523b64f284cca79c2b274f771daac2
   - folder: wxyz_lab
     url: https://pypi.io/packages/source/w/wxyz_lab/wxyz_lab-{{ version }}.tar.gz
-    sha256: a268dd845ef1d41b1d26ae29050373a0b3cb1a49ffcb68d070417b5a634cc3a1
+    sha256: 0777b42c8f6760d384b1f58107f29eb3aecb43f56e0fa409c525c00445db281d
   - folder: wxyz_svg
     url: https://pypi.io/packages/source/w/wxyz_svg/wxyz_svg-{{ version }}.tar.gz
-    sha256: 08f8be3e43acc0ee08cbdbbedc6e547959faee00d3fbd659c92d852d8c9aee70
+    sha256: c81ca373ad4f4b9dc4eecf979e306a06c39df26e4ebd9e0d71297f9c5b4185c8
   - folder: wxyz_tpl_jinja
     url: https://pypi.io/packages/source/w/wxyz_tpl_jinja/wxyz_tpl_jinja-{{ version }}.tar.gz
-    sha256: 691cc6c3df050487b23aec7abcaf1ed5efb80da7e0eeada1e21c135b12221d6d
+    sha256: 4cb4851399f9dd90c2ceb756368e8bc3e1f416a429dafb1e046a602361944747
   - folder: wxyz_yaml
     url: https://pypi.io/packages/source/w/wxyz_yaml/wxyz_yaml-{{ version }}.tar.gz
-    sha256: 0203400749a3b7675cfbac7b9404a0399749374bf938dac886d88c6a38a27d63
+    sha256: 856cb411fa54e1551ad41b45b21f93e746fa6208dd0092f5afa82f70629f5cb3
 
 build:
   number: {{ build_number }}
@@ -70,6 +70,7 @@ outputs:
       run:
         - ipywidgets
         - jsonpointer
+        - jupyterlab >=3,<4
         - python >=3.6
     test:
       requires:
