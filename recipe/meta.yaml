@@ -1,7 +1,7 @@
 {% set version = "0.5.1" %}
 {% set min_peer = "0.5" %}
 {% set max_peer = "0.6" %}
-{% set build_number = "0" %}
+{% set build_number = 1 %}
 
 package:
   name: jupyter-wxyz
@@ -9,37 +9,37 @@ package:
 
 source:
   - folder: wxyz_core
-    url: https://pypi.io/packages/source/w/wxyz_core/wxyz_core-{{ version }}.tar.gz
+    url: https://pypi.org/packages/source/w/wxyz_core/wxyz_core-{{ version }}.tar.gz
     sha256: d8f882e5a5496304d45d599251da39f589c79df59f551515eebd39e94207b5fe
   - folder: wxyz_datagrid
-    url: https://pypi.io/packages/source/w/wxyz_datagrid/wxyz_datagrid-{{ version }}.tar.gz
+    url: https://pypi.org/packages/source/w/wxyz_datagrid/wxyz_datagrid-{{ version }}.tar.gz
     sha256: 10778021d654e1e279f7eb53545bde9397af441b85af5beec1e3ee5e387435d7
   - folder: wxyz_dvcs
-    url: https://pypi.io/packages/source/w/wxyz_dvcs/wxyz_dvcs-{{ version }}.tar.gz
+    url: https://pypi.org/packages/source/w/wxyz_dvcs/wxyz_dvcs-{{ version }}.tar.gz
     sha256: c0dad382572a05256662a791b9fb5a11a2c32e41ca603bd28c55f890b082af22
   - folder: wxyz_html
-    url: https://pypi.io/packages/source/w/wxyz_html/wxyz_html-{{ version }}.tar.gz
+    url: https://pypi.org/packages/source/w/wxyz_html/wxyz_html-{{ version }}.tar.gz
     sha256: d105b58ba3d84e5a0f47b89232efc1e00a3f1f24faa9fc555ffa865a5963131a
   - folder: wxyz_json_e
-    url: https://pypi.io/packages/source/w/wxyz_json_e/wxyz_json_e-{{ version }}.tar.gz
+    url: https://pypi.org/packages/source/w/wxyz_json_e/wxyz_json_e-{{ version }}.tar.gz
     sha256: c6513f454321bcf044f943297321e5c9c6de2b7c1b6b82bf2962adfce50ec794
   - folder: wxyz_json_schema_form
-    url: https://pypi.io/packages/source/w/wxyz_json_schema_form/wxyz_json_schema_form-{{ version }}.tar.gz
+    url: https://pypi.org/packages/source/w/wxyz_json_schema_form/wxyz_json_schema_form-{{ version }}.tar.gz
     sha256: 492450c54897437086916752a423bb3616648f5ebf82000ba92848abf92d3bcc
   - folder: wxyz_jsonld
-    url: https://pypi.io/packages/source/w/wxyz_jsonld/wxyz_jsonld-{{ version }}.tar.gz
+    url: https://pypi.org/packages/source/w/wxyz_jsonld/wxyz_jsonld-{{ version }}.tar.gz
     sha256: 0da34141ce5774ad316234323c5ac318f10a036b94e61fb7601db03f49344843
   - folder: wxyz_lab
-    url: https://pypi.io/packages/source/w/wxyz_lab/wxyz_lab-{{ version }}.tar.gz
+    url: https://pypi.org/packages/source/w/wxyz_lab/wxyz_lab-{{ version }}.tar.gz
     sha256: 7ab8eec5abda43cee7a0e409283168cb6fc9747e0afe054aebf2a3b37f306bde
   - folder: wxyz_svg
-    url: https://pypi.io/packages/source/w/wxyz_svg/wxyz_svg-{{ version }}.tar.gz
+    url: https://pypi.org/packages/source/w/wxyz_svg/wxyz_svg-{{ version }}.tar.gz
     sha256: 9687d5a830f1a9bd3dbd61f15fba137b2f3aee5224418f498be4a5034370b600
   - folder: wxyz_tpl_jinja
-    url: https://pypi.io/packages/source/w/wxyz_tpl_jinja/wxyz_tpl_jinja-{{ version }}.tar.gz
+    url: https://pypi.org/packages/source/w/wxyz_tpl_jinja/wxyz_tpl_jinja-{{ version }}.tar.gz
     sha256: 5e185dea33144dafbd77f4c59a74087575430e592887d482b2365cd2ea94c96a
   - folder: wxyz_yaml
-    url: https://pypi.io/packages/source/w/wxyz_yaml/wxyz_yaml-{{ version }}.tar.gz
+    url: https://pypi.org/packages/source/w/wxyz_yaml/wxyz_yaml-{{ version }}.tar.gz
     sha256: 1a51936b35590827e79e4c06debe193e00130d0168eb349928bf92884c21412e
 
 build:
@@ -49,11 +49,13 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
-    - python >=3.6
+    - python >={{ python_min }}
 
 test:
+  requires:
+    - python {{ python_min }}
   commands:
     - echo TBD
 
@@ -66,15 +68,16 @@ outputs:
     requirements:
       host:
         - pip
-        - python >=3.6
+        - python {{ python_min }}
       run:
         - ipywidgets
         - jsonpointer
         - jupyterlab >=3,<4
-        - python >=3.6
+        - python >={{ python_min }}
     test:
       requires:
         - pip
+        - python {{ python_min }}
       imports:
         - wxyz.core
       commands:
@@ -96,16 +99,17 @@ outputs:
     requirements:
       host:
         - pip
-        - python >=3.6
+        - python {{ python_min }}
       run:
         - pandas
-        - python >=3.6
+        - python >={{ python_min }}
         - traittypes
         - wxyz_core >={{ min_peer }},<{{ max_peer }}
         - wxyz_html >={{ min_peer }},<{{ max_peer }}
     test:
       requires:
         - pip
+        - python {{ python_min }}
       imports:
         - wxyz.datagrid
       commands:
@@ -127,16 +131,17 @@ outputs:
     requirements:
       host:
         - pip
-        - python >=3.6
+        - python {{ python_min }}
       run:
         - gitpython
-        - python >=3.6
+        - python >={{ python_min }}
         - pyyaml
         - watchgod
         - wxyz_core >={{ min_peer }},<{{ max_peer }}
     test:
       requires:
         - pip
+        - python {{ python_min }}
       imports:
         - wxyz.dvcs
       commands:
@@ -158,13 +163,14 @@ outputs:
     requirements:
       host:
         - pip
-        - python >=3.6
+        - python {{ python_min }}
       run:
-        - python >=3.6
+        - python >={{ python_min }}
         - wxyz_core >={{ min_peer }},<{{ max_peer }}
     test:
       requires:
         - pip
+        - python {{ python_min }}
       imports:
         - wxyz.html
       commands:
@@ -186,14 +192,15 @@ outputs:
     requirements:
       host:
         - pip
-        - python >=3.6
+        - python {{ python_min }}
       run:
         - json-e >=4.4,<5
-        - python >=3.6
+        - python >={{ python_min }}
         - wxyz_core >={{ min_peer }},<{{ max_peer }}
     test:
       requires:
         - pip
+        - python {{ python_min }}
       imports:
         - wxyz.json_e
       commands:
@@ -215,13 +222,14 @@ outputs:
     requirements:
       host:
         - pip
-        - python >=3.6
+        - python {{ python_min }}
       run:
-        - python >=3.6
+        - python >={{ python_min }}
         - wxyz_core >={{ min_peer }},<{{ max_peer }}
     test:
       requires:
         - pip
+        - python {{ python_min }}
       imports:
         - wxyz.json_schema_form
       commands:
@@ -243,14 +251,15 @@ outputs:
     requirements:
       host:
         - pip
-        - python >=3.6
+        - python {{ python_min }}
       run:
-        - python >=3.6
+        - python >={{ python_min }}
         - wxyz_core >={{ min_peer }},<{{ max_peer }}
         - pyld
     test:
       requires:
         - pip
+        - python {{ python_min }}
       imports:
         - wxyz.jsonld
       commands:
@@ -272,13 +281,14 @@ outputs:
     requirements:
       host:
         - pip
-        - python >=3.6
+        - python {{ python_min }}
       run:
-        - python >=3.6
+        - python >={{ python_min }}
         - wxyz_core >={{ min_peer }},<{{ max_peer }}
     test:
       requires:
         - pip
+        - python {{ python_min }}
       imports:
         - wxyz.lab
       commands:
@@ -300,13 +310,14 @@ outputs:
     requirements:
       host:
         - pip
-        - python >=3.6
+        - python {{ python_min }}
       run:
-        - python >=3.6
+        - python >={{ python_min }}
         - wxyz_core >={{ min_peer }},<{{ max_peer }}
     test:
       requires:
         - pip
+        - python {{ python_min }}
       imports:
         - wxyz.svg
       commands:
@@ -328,14 +339,15 @@ outputs:
     requirements:
       host:
         - pip
-        - python >=3.6
+        - python {{ python_min }}
       run:
-        - python >=3.6
+        - python >={{ python_min }}
         - wxyz_core >={{ min_peer }},<{{ max_peer }}
         - jinja2
     test:
       requires:
         - pip
+        - python {{ python_min }}
       imports:
         - wxyz.tpl_jinja
       commands:
@@ -357,14 +369,15 @@ outputs:
     requirements:
       host:
         - pip
-        - python >=3.6
+        - python {{ python_min }}
       run:
-        - python >=3.6
+        - python >={{ python_min }}
         - wxyz_core >={{ min_peer }},<{{ max_peer }}
         - pyyaml
     test:
       requires:
         - pip
+        - python {{ python_min }}
       imports:
         - wxyz.yaml
       commands:
